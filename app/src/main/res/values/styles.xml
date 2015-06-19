@@ -3,14 +3,17 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="actionBarStyle">@style/ActionBar</item>
+
     </style>
     <style name="ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/grey</item>
-        <item name="actionBarStyle">@style/ActionBar</item>
+        <item name="background">@drawable/actionbar</item>
+
     </style>
     <style name="AppTheme.CustomTheme" >
         <item name= "android:windowIsTranslucent">true</item>
         <item name = "android:windowCloseOnTouchOutside">true</item>
+        <item name = "android:popupWindowStyle">@android:style/Widget.PopupWindow</item>
+
 
     </style>
 

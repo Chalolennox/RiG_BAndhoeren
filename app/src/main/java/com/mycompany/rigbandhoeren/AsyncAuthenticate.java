@@ -34,7 +34,7 @@ public class AsyncAuthenticate extends AsyncTask<String, Integer, String> {
         } catch (RiGException e) {
             if(e instanceof BadAuthenticationException){
 
-                rig.getIntent().putExtra("Error", " BadAuthenticationException");
+                rig.getIntent().putExtra("Error", "Passwort und Username  stimmen nicht überein");
                 return null;
 
             }

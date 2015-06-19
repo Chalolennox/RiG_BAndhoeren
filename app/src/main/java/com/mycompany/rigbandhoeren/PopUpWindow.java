@@ -1,5 +1,6 @@
 package com.mycompany.rigbandhoeren;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -18,6 +19,8 @@ public class PopUpWindow extends ActionBarActivity {
         DisplayMetrics dm = new DisplayMetrics();
         Error_message=(TextView)findViewById(R.id.popuptext);
         Bundle main_data=getIntent().getExtras();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         if(main_data==null){
             return;
 
@@ -28,7 +31,7 @@ public class PopUpWindow extends ActionBarActivity {
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width= dm.widthPixels;
         int height= dm.heightPixels;
-        getWindow().setLayout((int)(width* 0.4),(int)(height* 0.4));
+        getWindow().setLayout((int)(width* 0.8),(int)(height* 0.2));
     }
 
 
