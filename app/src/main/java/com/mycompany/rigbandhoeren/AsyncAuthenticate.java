@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+
 import com.mycompany.rigbandhoeren.rigAPI.*;
 
 import static android.support.v4.app.ActivityCompat.startActivity;
@@ -14,11 +17,11 @@ import static android.support.v4.app.ActivityCompat.startActivity;
 public class AsyncAuthenticate extends AsyncTask<String, Integer, String> {
 
     private RigDBAccess rig;
-    private Activity app;
+    private FragmentActivity app;
     private  Exception exception;
 
 
-    public AsyncAuthenticate(Activity app, RigDBAccess rig) {
+    public AsyncAuthenticate(FragmentActivity app, RigDBAccess rig) {
         this.app = app;
         this.rig = rig;
     }
@@ -40,10 +43,13 @@ public class AsyncAuthenticate extends AsyncTask<String, Integer, String> {
             }
             else  if(e instanceof NoPasswordException){
 
-                rig.getIntent().putExtra("Error", "NoPasswordException");
+                //rig.getIntent().putExtra("Error", "NoPasswordException");
+                FragmentManager fm = app.getSupportFragmentManager();
+                ErrorDialog error = new ErrorDialog();
+                error.show(fm, "HILFE!");
 
 
-                return null;
+                return "bla";
 
             }
             else  if(e instanceof BrokenAPIKeyException){

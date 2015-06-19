@@ -34,9 +34,6 @@ public class MainActivity extends ActionBarActivity implements Login_fragment.Lo
 
                 error=new AsyncAuthenticate(this, rig).execute(Username, Passwort)
                         .get();
-                 if(error==null) {
-                     startActivity(pop_window);
-                 }
 
         }  catch (InterruptedException e) {
             e.printStackTrace();
