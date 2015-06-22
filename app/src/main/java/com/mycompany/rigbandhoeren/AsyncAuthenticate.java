@@ -49,7 +49,7 @@ public class AsyncAuthenticate extends AsyncTask<String, Integer, String> {
                 error.show(fm, "HILFE!");
 
 
-                return "bla";
+                return null;
 
             }
             else  if(e instanceof BrokenAPIKeyException){
